@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+struct node
+{
+int data;
+struct node *next;
+}*head;
+
+void disp()
+{
+	printf("\n");
+	if(head)
+	{
+		struct node *p=head;
+		while(p)
+		{
+			printf("%d ",p->data);
+			p=p->next;
+		}
+	}
+}
+
+void insb(int ele)
+{
+	struct node *nn = (struct node*) malloc(sizeof(struct node));
+	nn->data=ele;
+	nn->next=head;
+	head=nn;
+}
+
+int main()
+{
+insb(10);
+insb(9);
+insb(8);
+insb(7);
+insb(6);
+insb(5);
+insb(4);
+insb(3);
+insb(2);
+insb(1);
+disp();
+return 0;
+}
